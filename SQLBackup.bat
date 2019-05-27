@@ -52,3 +52,12 @@ cd "Program Files\7-Zip"
 :: --------------------------------------------------
 :: Cancella il file originale non zippato
 DEL "%DEST_FILE%"
+
+:: ---------------------cancella Backup vecchi-----------------------------
+:: /p <Path>
+:: /s ricerca in modo ricorsivo le sottodirectory
+:: /m <SearchMask>	Cerca i file in base alla maschera di ricerca specificati. La maschera di ricerca predefinito è *.\*
+:: /c "<comando >"	Esegue il comando specificato su ogni file. Stringhe di comando devono essere racchiusa tra virgolette. Il comando predefinito è "cmd /c echo @file".
+:: /d Seleziona i file con una data dell'ultima modifica intervallo di tempo specificato.
+
+:: FORFILES /P "C:\Program Files (x86)\Microsoft SQL Server\MSSQL11.SQLEXPRESS\MSSQL\Backup" /M *.zip /D -5
